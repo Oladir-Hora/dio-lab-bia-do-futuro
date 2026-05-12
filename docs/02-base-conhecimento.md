@@ -45,7 +45,9 @@ with open('data/produtos_financeiros.json', 'r', encoding='utf-8') as f:
 ### Como os dados são usados no prompt?
 > Os dados vão no system prompt? São consultados dinamicamente?
 
-´´´text
+Para simplificar, podemos simplesmente 'injetar' os dados em nosso prompt, garantindo que o Agente tenha o melhor contexto possível. Lembrando que, em soluções mais robustas, o ideal é que essas informações sejam carregadas dinamicamente para que possamos ganhar flexibilidade.
+
+```text
 DADOS DO CLIENTE E PERFIL (JSON):
 
 {
@@ -136,20 +138,35 @@ PRODUTOS DISPONÍVEIS PARA ENSINO:
     "indicado_para": "Perfil arrojado com foco no longo prazo"
   }
 ]
+```
 ---
 
 ## Exemplo de Contexto Montado
 
 > Mostre um exemplo de como os dados são formatados para o agente.
 
+O exemplo de contexto montado abaixo, se baseia nos dados originais da base de conhecimento, mas os sintetiza deixando apenas as informações mais relevantes, otimizando assim o consumo de tokens. Entretanto, vale lembrar que mais importante do que economizar tokens, é ter todas as informações relevantes disponíveis em seu contexto.
+
 ```
-Dados do Cliente:
+DADOS DO CLIENTE:
 - Nome: João Silva
 - Perfil: Moderado
-- Saldo disponível: R$ 5.000
+- Objetivo: Construir reserva de emergência
+- Reserva atual: R$ 10.000 (meta: R$ 15.000)
 
-Últimas transações:
-- 01/11: Supermercado - R$ 450
-- 03/11: Streaming - R$ 55
-...
+RESUMO DE GASTOS:
+- Moradia: R$ 1.380
+- Alimentação: R$ 576
+- Transporte: R$ 296
+- Saúde: R$ 138
+- Lazer: R$ 599,90
+- Total de saídas: R$ 2.988,90
+
+PRODUTOS DISPONÍVEIS PARA EXPLICAR:
+- Tesouro Selic (risco baixo)
+- CDB Liquidez Diária (risco baixo)
+- LCI/LCA (risco baixo)
+- Fundo Multimercado (risco médio)
+- Fundo de Ações (risco alto)
+
 ```

@@ -35,10 +35,28 @@ Utilize os **dados mockados** disponíveis na pasta [`data/`](./data/) para alim
 
 | Arquivo | Formato | Descrição |
 |---------|---------|-----------|
-| `transacoes.csv` | CSV | Histórico de transações do cliente |
+| `transacoes.csv` | CSV | exemplo de transações(dados ñ reais) |
 | `historico_atendimento.csv` | CSV | Histórico de atendimentos anteriores |
 | `perfil_investidor.json` | JSON | Perfil e preferências do cliente |
 | `produtos_financeiros.json` | JSON | Produtos e serviços disponíveis |
+
+
+## 📂 Transações financeiras em CSV
+
+O arquivo `data/transacoes.csv` contém um conjunto de **transações simuladas** que servem como exemplo de movimentações financeiras.  
+Ele não representa dados reais do usuário, mas ajuda o agente a ilustrar conceitos de **fluxo de caixa**, **categorias de despesas** e **receitas**.
+
+### Estrutura
+- **data**: data da transação (AAAA-MM-DD)  
+- **descricao**: descrição da transação (ex.: Salário, Aluguel, Supermercado)  
+- **categoria**: categoria da transação (ex.: receita, moradia, alimentação, lazer, saúde)  
+- **valor**: valor monetário  
+- **tipo**: `entrada` (receita) ou `saida` (despesa)  
+
+### Uso no agente
+- Serve como **material didático** para explicar entradas e saídas.  
+- Os **dados reais do usuário** são coletados via formulário e salvos em `perfil_investidor.json`.  
+- Complementa o contexto para exemplos práticos de orçamento.  
 
 Você pode adaptar ou expandir esses dados conforme seu caso de uso.
 

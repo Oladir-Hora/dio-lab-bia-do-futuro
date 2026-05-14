@@ -1,168 +1,222 @@
-# 🤖 Agente Financeiro Inteligente com IA Generativa
+# 🤖 Gui — Seu Guia Financeiro Inteligente
 
-## Contexto
-
-Os assistentes virtuais no setor financeiro estão evoluindo de simples chatbots reativos para **agentes inteligentes e proativos**. Neste desafio, você vai idealizar e prototipar um agente financeiro que utiliza IA Generativa para:
-
-- **Antecipar necessidades** ao invés de apenas responder perguntas
-- **Personalizar** sugestões com base no contexto de cada cliente
-- **Cocriar soluções** financeiras de forma consultiva
-- **Garantir segurança** e confiabilidade nas respostas (anti-alucinação)
-
-> [!TIP]
-> Na pasta [`examples/`](./examples/) você encontra referências de implementação para cada etapa deste desafio.
+> Agente de IA educativo para finanças pessoais, desenvolvido como solução para o laboratório **Bia do Futuro** da [Digital Innovation One](https://www.dio.me/).
 
 ---
 
-## O Que Você Deve Entregar
+## 💡 O Problema
 
-### 1. Documentação do Agente
+Muitas pessoas têm dificuldade em entender conceitos básicos de finanças pessoais. A falta de informação acessível leva a decisões financeiras desinformadas — não por descuido, mas por ausência de um guia confiável e descomplicado.
 
-Defina **o que** seu agente faz e **como** ele funciona:
+## ✅ A Solução: Gui
 
-- **Caso de Uso:** Qual problema financeiro ele resolve? (ex: consultoria de investimentos, planejamento de metas, alertas de gastos)
-- **Persona e Tom de Voz:** Como o agente se comporta e se comunica?
-- **Arquitetura:** Fluxo de dados e integração com a base de conhecimento
-- **Segurança:** Como evitar alucinações e garantir respostas confiáveis?
-
-📄 **Template:** [`docs/01-documentacao-agente.md`](./docs/01-documentacao-agente.md)
+**Gui** (Guia Financeiro) é um agente conversacional baseado em IA que ensina finanças pessoais de forma simples, personalizada e segura. Ele não recomenda investimentos específicos — ele **educa**, usando os próprios dados do usuário como exemplos práticos.
 
 ---
 
-### 2. Base de Conhecimento
+## 🧠 Persona do Agente
 
-Utilize os **dados disponíveis** na pasta [`data/`](./data/) para alimentar seu agente:
+| Atributo | Descrição |
+|---|---|
+| **Nome** | Gui (Guia Financeiro) |
+| **Personalidade** | Calmo, paciente, encorajador |
+| **Tom de voz** | Amigável, acessível, didático — como um professor de confiança |
+| **Público-alvo** | Qualquer pessoa, especialmente iniciantes em finanças |
 
-| Arquivo | Formato | Descrição |
-|---------|---------|-----------|
-| `perfil_investidor.json` | JSON | Dados reais fornecidos pelo usuário (nome, idade, ganhos, despesas, dívidas, objetivos) |
-| `historico_atendimento.csv` | CSV | Simulação de interações anteriores |
-| `produtos_financeiros.json` | JSON | Catálogo fictício de produtos financeiros para fins educativos |
-| `transacoes.csv` | CSV | **Transações simuladas** para exemplos de fluxo de caixa (não são dados reais) |
-
----
-
-## 📂 Transações financeiras em CSV
-
-O arquivo `data/transacoes.csv` contém um conjunto de **transações simuladas** que servem como exemplo de movimentações financeiras.  
-Ele não representa dados reais do usuário, mas ajuda o agente a ilustrar conceitos de **fluxo de caixa**, **categorias de despesas** e **receitas**.
-
-### Estrutura
-- **data**: data da transação (AAAA-MM-DD)  
-- **descricao**: descrição da transação (ex.: Salário, Aluguel, Supermercado)  
-- **categoria**: categoria da transação (ex.: receita, moradia, alimentação, lazer, saúde)  
-- **valor**: valor monetário  
-- **tipo**: `entrada` (receita) ou `saida` (despesa)  
-
-### Uso no agente
-- Serve como **material didático** para explicar entradas e saídas.  
-- Os **dados reais do usuário** são coletados via formulário e salvos em `perfil_investidor.json`.  
-- Complementa o contexto para exemplos práticos de orçamento.  
-
-
-📄 **Template:** [`docs/02-base-conhecimento.md`](./docs/02-base-conhecimento.md)
+**Exemplos de linguagem:**
+- Saudação: *"Olá! Como posso te ajudar com suas finanças hoje?"*
+- Confirmação: *"Entendi! Deixa eu verificar isso para você."*
+- Limitação: *"Não tenho essa informação no momento, mas posso ajudar com..."*
 
 ---
 
-### 3. Prompts do Agente
-
-Documente os prompts que definem o comportamento do seu agente:
-
-- **System Prompt:** Instruções gerais de comportamento e restrições
-- **Exemplos de Interação:** Cenários de uso com entrada e saída esperada
-- **Tratamento de Edge Cases:** Como o agente lida com situações limite
-
-📄 **Template:** [`docs/03-prompts.md`](./docs/03-prompts.md)
-
----
-
-### 4. Aplicação Funcional
-
-Desenvolva um **protótipo funcional** do seu agente:
-
-- Chatbot interativo (sugestão: Streamlit, Gradio ou similar)
-- Integração com LLM (via API ou modelo local)
-- Conexão com a base de conhecimento
-
-📁 **Pasta:** [`src/`](./src/)
-
----
-
-### 5. Avaliação e Métricas
-
-Descreva como você avalia a qualidade do seu agente:
-
-**Métricas Sugeridas:**
-- Precisão/assertividade das respostas
-- Taxa de respostas seguras (sem alucinações)
-- Coerência com o perfil do cliente
-
-📄 **Template:** [`docs/04-metricas.md`](./docs/04-metricas.md)
-
----
-
-### 6. Pitch
-
-Grave um **pitch de 3 minutos** (estilo elevador) apresentando:
-
-- Qual problema seu agente resolve?
-- Como ele funciona na prática?
-- Por que essa solução é inovadora?
-
-📄 **Template:** [`docs/05-pitch.md`](./docs/05-pitch.md)
-
----
-
-## Ferramentas Sugeridas
-
-Todas as ferramentas abaixo possuem versões gratuitas:
-
-| Categoria | Ferramentas |
-|-----------|-------------|
-| **LLMs** | [ChatGPT](https://chat.openai.com/), [Copilot](https://copilot.microsoft.com/), [Gemini](https://gemini.google.com/), [Claude](https://claude.ai/), [Ollama](https://ollama.ai/) |
-| **Desenvolvimento** | [Streamlit](https://streamlit.io/), [Gradio](https://www.gradio.app/), [Google Colab](https://colab.research.google.com/) |
-| **Orquestração** | [LangChain](https://www.langchain.com/), [LangFlow](https://www.langflow.org/), [CrewAI](https://www.crewai.com/) |
-| **Diagramas** | [Mermaid](https://mermaid.js.org/), [Draw.io](https://app.diagrams.net/), [Excalidraw](https://excalidraw.com/) |
-
----
-
-## Estrutura do Repositório
+## 🏗️ Arquitetura
 
 ```
-📁 lab-agente-financeiro/
+flowchart TD
+    A[Usuário] --> B[Streamlit - Interface Visual]
+    B --> C[LLM via Ollama - local]
+    C --> D[Base de Conhecimento]
+    D --> C
+    C --> E[Validação Anti-Alucinação]
+    E --> F[Resposta Personalizada]
+```
+
+| Componente | Tecnologia |
+|---|---|
+| Interface | Streamlit |
+| LLM | Ollama (local) — modelo `gpt-oss:20b` |
+| Base de Conhecimento | JSON e CSV mockados |
+| Validação | Regras no system prompt |
+
+---
+
+## 📁 Estrutura do Repositório
+
+```
+📁 dio-lab-bia-do-futuro/
 │
 ├── 📄 README.md
 │
-├── 📁 data/                          # Dados mockados para o agente
-│   ├── historico_atendimento.csv     # Histórico de atendimentos (CSV)
-│   ├── perfil_investidor.json        # Perfil do cliente (JSON)
-│   ├── produtos_financeiros.json     # Produtos disponíveis (JSON)
-│   └── transacoes.csv                # Histórico de transações (CSV)
+├── 📁 data/
+│   ├── perfil_investidor.json        ← Fonte principal: preenchido pelo usuário
+│   ├── historico_atendimento.csv     ← Simulação de interações anteriores
+│   ├── produtos_financeiros.json     ← Catálogo fictício de produtos
+│   └── transacoes.csv                ← Transações simuladas para exemplos
 │
-├── 📁 docs/                          # Documentação do projeto
-│   ├── 01-documentacao-agente.md     # Caso de uso e arquitetura
-│   ├── 02-base-conhecimento.md       # Estratégia de dados
-│   ├── 03-prompts.md                 # Engenharia de prompts
-│   ├── 04-metricas.md                # Avaliação e métricas
-│   └── 05-pitch.md                   # Roteiro do pitch
+├── 📁 docs/
+│   ├── 01-documentacao-agente.md     ← Caso de uso e arquitetura
+│   ├── 02-base-conhecimento.md       ← Estratégia de dados
+│   ├── 03-prompts.md                 ← Engenharia de prompts
+│   ├── 04-metricas.md                ← Avaliação e resultados
+│   └── 05-pitch.md                   ← (em breve)
 │
-├── 📁 src/                           # Código da aplicação
-│   └── app.py                        # (exemplo de estrutura)
+├── 📁 src/
+│   └── app.py                        ← Aplicação principal (Streamlit)
 │
-├── 📁 assets/                        # Imagens e diagramas
-│   └── ...
-│
-└── 📁 examples/                      # Referências e exemplos
-    └── README.md
+├── 📁 assets/
+└── 📁 examples/
 ```
 
 ---
 
-## 📌 Dicas Finais
+## 🗃️ Base de Conhecimento
 
-1. **Comece pelo prompt:** Um bom *system prompt* é a base de um agente eficaz.  
-2. **Use os dados mockados com clareza:** Eles garantem consistência e evitam problemas com dados sensíveis. No seu projeto, `transacoes.csv`, `historico_atendimento.csv` e `produtos_financeiros.json` são apenas exemplos educativos.  
-3. **Destaque os dados reais:** O `perfil_investidor.json` é preenchido pelo usuário via formulário e deve ser tratado como a fonte principal.  
-4. **Foque na segurança:** No setor financeiro, evitar alucinações é crítico. O agente deve admitir quando não sabe algo e nunca recomendar investimentos específicos.  
-5. **Teste cenários reais:** Simule perguntas que um cliente faria de verdade, usando os dados do perfil e os exemplos mockados para enriquecer a resposta.  
-6. **Seja direto no pitch:** 3 minutos passam rápido, vá ao ponto e mostre claramente o problema que o agente resolve e como funciona.  
+O Gui combina dados reais do usuário com dados educativos mockados:
+
+| Arquivo | Tipo | Uso |
+|---|---|---|
+| `perfil_investidor.json` | **Dado real** (via formulário) | Personalização das respostas |
+| `transacoes.csv` | Simulado | Exemplos de fluxo de caixa |
+| `historico_atendimento.csv` | Simulado | Contexto de atendimentos anteriores |
+| `produtos_financeiros.json` | Fictício | Explicação de produtos financeiros |
+
+**Exemplo de contexto montado para o LLM:**
+```
+CLIENTE: Oladir da Hora, 44 anos, perfil Moderado
+OBJETIVO: Reserva de emergência
+GANHOS MENSAIS: R$ 9.000 | DESPESAS: R$ 7.500 | SALDO: R$ 1.500
+
+RESUMO DE GASTOS (simulado):
+- Moradia: R$ 1.380 | Alimentação: R$ 570 | Transporte: R$ 295
+
+PRODUTOS DISPONÍVEIS: Tesouro Selic, CDB, LCI/LCA, Fundo Multimercado...
+```
+
+---
+
+## 🧩 System Prompt
+
+```
+Você é o Gui, um guia financeiro amigável e didático.
+
+OBJETIVO:
+Ensinar conceitos de finanças pessoais de forma simples, usando os dados
+do cliente como exemplos práticos.
+
+REGRAS:
+- NUNCA recomende investimentos específicos — apenas explique como funcionam
+- JAMAIS responda perguntas fora do tema finanças pessoais
+- Use os dados fornecidos para dar exemplos personalizados
+- Linguagem simples, como se explicasse para um amigo
+- Sempre pergunte se o cliente entendeu
+- Responda de forma sucinta, com no máximo 3 parágrafos
+```
+
+### Exemplos de Interação
+
+**Conceito financeiro:**
+> 👤 "O que é CDI?"
+> 🤖 "CDI é uma taxa de referência usada pelos bancos. Quando um investimento rende '100% do CDI', significa que ele acompanha essa taxa. Hoje o CDI está próximo da Selic. Quer que eu explique a diferença entre os dois?"
+
+**Análise de gastos:**
+> 👤 "Onde estou gastando mais?"
+> 🤖 "Olhando suas transações de outubro, sua maior despesa é moradia (R$ 1.380), seguida de alimentação (R$ 570). Juntas representam quase 80% dos seus gastos. Quer que eu explique algumas estratégias de organização?"
+
+**Pergunta fora do escopo:**
+> 👤 "Qual a previsão do tempo para amanhã?"
+> 🤖 "Sou especializado em finanças e não tenho informações sobre previsão do tempo. Posso ajudar com algo relacionado às suas finanças?"
+
+---
+
+## 🚀 Como Executar
+
+### Pré-requisitos
+
+- Python 3.9+
+- [Ollama](https://ollama.ai/) instalado e rodando localmente
+- Modelo `gpt-oss:20b` disponível no Ollama
+
+### Instalação
+
+```bash
+# Clone o repositório
+git clone https://github.com/Oladir-Hora/dio-lab-bia-do-futuro.git
+cd dio-lab-bia-do-futuro
+
+# Instale as dependências
+pip install streamlit pandas requests
+
+# Inicie o Ollama com o modelo
+ollama run gpt-oss:20b
+
+# Execute a aplicação
+streamlit run src/app.py
+```
+
+### Fluxo de uso
+
+1. Preencha o formulário de onboarding com seus dados financeiros
+2. O perfil é salvo na sessão e usado para personalizar as respostas
+3. Converse com o Gui pelo chat e tire suas dúvidas sobre finanças
+
+---
+
+## 🛡️ Segurança e Anti-Alucinação
+
+O Gui foi projetado para ser confiável no contexto financeiro:
+
+- ✅ Responde apenas com base nos dados fornecidos
+- ✅ Admite quando não sabe algo
+- ✅ Foca em **educar**, não em aconselhar
+- ✅ Não recomenda investimentos específicos
+- ❌ Não acessa dados bancários sensíveis
+- ❌ Não substitui um profissional certificado (CFP, assessor de investimentos)
+
+---
+
+## 📊 Avaliação e Métricas
+
+| Métrica | O que avalia | Resultado |
+|---|---|---|
+| **Assertividade** | O agente respondeu o que foi perguntado? | ✅ Aprovado |
+| **Segurança** | Evitou inventar informações? | ✅ Aprovado |
+| **Coerência** | Resposta coerente com o perfil do cliente? | ✅ Aprovado |
+| **Escopo** | Recusa perguntas fora de finanças? | ✅ Aprovado |
+
+**O que funcionou bem:** Tudo funcionou como esperado nos testes estruturados.
+
+**Pontos de melhoria:**
+- O uso da rede local (Ollama) adiciona latência nas respostas
+- Incorporar produtos financeiros reais no catálogo
+
+---
+
+## 🛠️ Tecnologias Utilizadas
+
+![Python](https://img.shields.io/badge/Python-3776AB?style=flat&logo=python&logoColor=white)
+![Streamlit](https://img.shields.io/badge/Streamlit-FF4B4B?style=flat&logo=streamlit&logoColor=white)
+![Ollama](https://img.shields.io/badge/Ollama-000000?style=flat&logo=ollama&logoColor=white)
+![Pandas](https://img.shields.io/badge/Pandas-150458?style=flat&logo=pandas&logoColor=white)
+
+---
+
+## 👤 Autor
+
+Desenvolvido por **Oladir da Hora** como solução para o laboratório **Bia do Futuro** da [DIO](https://www.dio.me/).
+
+---
+
+## 📄 Licença
+
+Este projeto é um fork de [digitalinnovationone/dio-lab-bia-do-futuro](https://github.com/digitalinnovationone/dio-lab-bia-do-futuro) e segue a licença do repositório original. 

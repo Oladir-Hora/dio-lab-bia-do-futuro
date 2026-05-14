@@ -158,10 +158,11 @@ Todas as ferramentas abaixo possuem versões gratuitas:
 
 ---
 
-## Dicas Finais
+## 📌 Dicas Finais
 
-1. **Comece pelo prompt:** Um bom system prompt é a base de um agente eficaz
-2. **Use os dados mockados:** Eles garantem consistência e evitam problemas com dados sensíveis
-3. **Foque na segurança:** No setor financeiro, evitar alucinações é crítico
-4. **Teste cenários reais:** Simule perguntas que um cliente faria de verdade
-5. **Seja direto no pitch:** 3 minutos passam rápido, vá ao ponto
+1. **Comece pelo prompt:** Um bom *system prompt* é a base de um agente eficaz.  
+2. **Use os dados mockados com clareza:** Eles garantem consistência e evitam problemas com dados sensíveis. No seu projeto, `transacoes.csv`, `historico_atendimento.csv` e `produtos_financeiros.json` são apenas exemplos educativos.  
+3. **Destaque os dados reais:** O `perfil_investidor.json` é preenchido pelo usuário via formulário e deve ser tratado como a fonte principal.  
+4. **Foque na segurança:** No setor financeiro, evitar alucinações é crítico. O agente deve admitir quando não sabe algo e nunca recomendar investimentos específicos.  
+5. **Teste cenários reais:** Simule perguntas que um cliente faria de verdade, usando os dados do perfil e os exemplos mockados para enriquecer a resposta.  
+6. **Seja direto no pitch:** 3 minutos passam rápido, vá ao ponto e mostre claramente o problema que o agente resolve e como funciona.  

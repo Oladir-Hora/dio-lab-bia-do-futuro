@@ -31,15 +31,16 @@ Defina **o que** seu agente faz e **como** ele funciona:
 
 ### 2. Base de Conhecimento
 
-Utilize os **dados mockados** disponíveis na pasta [`data/`](./data/) para alimentar seu agente:
+Utilize os **dados disponíveis** na pasta [`data/`](./data/) para alimentar seu agente:
 
 | Arquivo | Formato | Descrição |
 |---------|---------|-----------|
-| `transacoes.csv` | CSV | exemplo de transações(dados ñ reais) |
-| `historico_atendimento.csv` | CSV | Histórico de atendimentos anteriores |
-| `perfil_investidor.json` | JSON | Perfil e preferências do cliente |
-| `produtos_financeiros.json` | JSON | Produtos e serviços disponíveis |
+| `perfil_investidor.json` | JSON | Dados reais fornecidos pelo usuário (nome, idade, ganhos, despesas, dívidas, objetivos) |
+| `historico_atendimento.csv` | CSV | Simulação de interações anteriores |
+| `produtos_financeiros.json` | JSON | Catálogo fictício de produtos financeiros para fins educativos |
+| `transacoes.csv` | CSV | **Transações simuladas** para exemplos de fluxo de caixa (não são dados reais) |
 
+---
 
 ## 📂 Transações financeiras em CSV
 
@@ -58,7 +59,6 @@ Ele não representa dados reais do usuário, mas ajuda o agente a ilustrar conce
 - Os **dados reais do usuário** são coletados via formulário e salvos em `perfil_investidor.json`.  
 - Complementa o contexto para exemplos práticos de orçamento.  
 
-Você pode adaptar ou expandir esses dados conforme seu caso de uso.
 
 📄 **Template:** [`docs/02-base-conhecimento.md`](./docs/02-base-conhecimento.md)
 

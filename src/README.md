@@ -38,3 +38,7 @@ python-dotenv
    sstreamlit run .\src\app.py   
 
 ```
+## Evidências
+
+<img width="861" height="744" alt="image" src="https://github.com/user-attachments/assets/399234eb-76df-43b0-81d9-4c6df09accfc" />
+

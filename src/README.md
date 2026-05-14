@@ -40,5 +40,6 @@ python-dotenv
 ```
 ## Evidências
 
-<img width="861" height="744" alt="image" src="https://github.com/user-attachments/assets/399234eb-76df-43b0-81d9-4c6df09accfc" />
+<img width="453" height="799" alt="image" src="https://github.com/user-attachments/assets/2e40927b-d6b6-4436-ae6c-deef4b1aab4a" />
+
 
